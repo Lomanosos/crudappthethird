@@ -8,6 +8,8 @@
   <packaging>war</packaging>
   <properties>
     <spring.version>5.3.14</spring.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
   <version>1.0-SNAPSHOT</version>
   <name>untitled1 Maven Webapp</name>
@@ -62,32 +64,6 @@
     </dependency>
   </dependencies>
   <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>2.4</version>
-          <configuration>
-            <warSourceDirectory>main/webapp</warSourceDirectory>
-            <warName>untitled1</warName>
-            <failOnMissingWebXml>false</failOnMissingWebXml>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-
-    <finalName>untitled1</finalName>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>17</source>
-          <target>17</target>
-        </configuration>
-      </plugin>
-    </plugins>
 
   </build>
 </project>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:form="http://www.springframework.org/tags/form">
+    <body>
+        <h2>User Info</h2>
+        <br>
+        <form:form action = "saveUser" modelAttribute = "user">
+
+            <form hidden path = "id"/>
+            Name <form:input path = "name"/>
+            <br><br>
+            Lastname <form:input path = "lastName"/>
+            <br><br>
+            Age <form:input path = "age"/>
+            <br><br>
+            Address <form:input path = "address"/>
+            <br><br>
+            <input type="submit" value="Ok">
+
+        </form:form>
+    </body>
+</html>
