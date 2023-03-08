@@ -16,16 +16,16 @@
         </tr>
         <c:forEach var = "user" items = ${listUser}>
             <c:url var = "updateButton" value = "/updateInfo">
-                <c:param name = "userId" value = "${emp.getId()}"/>
+                <c:param name = "userId" value = "${emp.id}"/>
             </c:url>
 
             <c:url var = "deleteButton" value = "/deleteUser">
-                <c:param name = "userId" value = "${emp.getId()}"/>
+                <c:param name = "userId" value = "${emp.id}"/>
             </c:url>
             <tr>
-                <td>${user.getName()}</td>
-                <td>${user.getLastName()}</td>
-                <td>${user.getAge()}</td>
+                <td>${user.name}</td>
+                <td>${user.lastName}</td>
+                <td>${user.age}</td>
                 <td>
                     <input type="button" value = "update"
                            onclick="window.location.href = '${updateButton}'"/>
