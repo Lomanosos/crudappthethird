@@ -50,7 +50,7 @@ public class UserController {
 
 
 
-    @GetMapping("/{id}") //удаление
+    @PostMapping("/deleteUser/{id}") //удаление
     public String deleteById(@PathVariable("id") long id) {
         User user = userService.getUserById(id);
         userService.removeUser(user);
