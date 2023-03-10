@@ -9,7 +9,6 @@
     <br>
     <table>
         <tr>
-
             <th>Name</th>
             <th>Lastname</th>
             <th>Age</th>
@@ -17,23 +16,18 @@
         </tr>
         <c:forEach items="${listUser}" var="user">
             <tr th:each="user : ${listUser}">
-
                 <td th:text="${user.name}"></td>
                 <td th:text="${user.lastName}"></td>
                 <td th:text="${user.age}"></td>
                 <td>
                     <input type="button" value="Edit" th:data-url="@{/editUser/{id}(id=${user.id})}"
                            onclick="window.location.href=this.getAttribute('data-url');"/>
-
                     <a th:href="@{'/deleteUser/?id='+${user.id}}">
                         <input type="button" value="delete">
                     </a>
-
-
                 </td>
             </tr>
         </c:forEach>
-
         </table>
     <br>
     <input type="button" value="Add" onclick="window.location.href='createNewUser'"/>

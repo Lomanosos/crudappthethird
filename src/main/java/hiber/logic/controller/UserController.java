@@ -24,13 +24,11 @@ public class UserController {
         mav.addAttribute("listUser",userService.getListUsers());
         return "all-users";
     }
-
     @GetMapping("/createNewUser")
     public String createUserForm(Model model) {
         model.addAttribute("user", new User());
         return "createUser";
     }
-
     @PostMapping() //сохранение
     public String save(@ModelAttribute("user") User theuser){
         userService.addUser(theuser);
@@ -47,12 +45,8 @@ public class UserController {
         return "redirect:/";
     }
 
-
-
-
     @GetMapping("/deleteUser/") //удаление
     public String deleteById(@RequestParam("id") long id) {
-        User user = userService.getUserById(id);
         userService.removeUser(id);
         return "redirect:/";
     }
