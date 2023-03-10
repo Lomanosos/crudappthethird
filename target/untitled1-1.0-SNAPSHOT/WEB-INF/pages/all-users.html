@@ -22,11 +22,13 @@
                 <td th:text="${user.lastName}"></td>
                 <td th:text="${user.age}"></td>
                 <td>
-                    <input type="button" value="Edit" th:data-url="@{/editUser/{id}/(id=${user.id})}"
+                    <input type="button" value="Edit" th:data-url="@{/editUser/{id}(id=${user.id})}"
                            onclick="window.location.href=this.getAttribute('data-url');"/>
 
-                    <input type="button" value="Delete" th:data-url="@{/deleteUser/{id}/(id=${user.id})}"
-                           onclick="window.location.href=this.getAttribute('data-url');"/>
+                    <a th:href="@{'/deleteUser/?id='+${user.id}}">
+                        <input type="button" value="delete">
+                    </a>
+
 
                 </td>
             </tr>

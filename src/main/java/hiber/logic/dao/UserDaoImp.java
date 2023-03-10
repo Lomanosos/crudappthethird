@@ -24,8 +24,8 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    public void removeUser(User user) {
-        e.remove(user);
+    public void removeUser(Long id) {
+        e.createQuery("delete from User where id = :id").setParameter("id",id).executeUpdate();
     }
 
     @Override
