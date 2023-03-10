@@ -34,8 +34,8 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    public void changeUserName(String newName) {
-        e.merge(newName);
+    public void changeUser(User user) {
+        e.merge(user);
     }
 
 }

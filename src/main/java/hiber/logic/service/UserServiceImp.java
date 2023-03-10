@@ -43,7 +43,7 @@ public class UserServiceImp implements UserService {
     }
     @Transactional
     @Override
-    public void changeUserName(String newName) {
-        userDao.changeUserName(newName);
+    public void changeUser(User user) {
+        userDao.changeUser(user);
     }
 }

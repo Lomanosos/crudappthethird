@@ -5,36 +5,24 @@
     <title>Update User</title>
 </head>
 <body>
-<form th:action="@{/}" th:object="${user}" th:method="POST">
-    <table>
-        <tr>
-            <td> ID:</td>
-            <td>${user.id}
-                <form:hidden path = "id"/>
-            </td>
-        </tr>
-        <tr>
-            <td> Name:</td>
-            <td>${user.name}
-                <form:hidden path = "name"/>
-            </td>
-        </tr>
-        <tr>
-            <td> Lastname::</td>
-            <td>${user.lastName}
-                <form:hidden path = "lastName"/>
-            </td>
-        </tr>
-        <tr>
-            <td> Age:</td>
-            <td>${user.age}
-                <form:hidden path = "age"/>
-            </td>
-        </tr>
-        <tr>
-            <input type="submit" value="save">
-        </tr>
-    </table>
+<form th:action="@{/updateUser}" th:object="${user}" th:method="POST">
+    <input type="hidden" th:field="*{id}"/>
+    <label for="name">Name</label>
+    <br/>
+    <input type="text" th:field="*{name}" id="name"/>
+
+    <br/>
+    <label for="lastName">Lastname</label>
+    <br/>
+    <input type="text"  th:field="*{lastName}" id = "lastName"/>
+
+    <br/>
+    <label for="age">Age</label>
+    <br/>
+    <input type="text" th:field="*{age}" id="age"/>
+
+    <br/>
+    <button type="submit" value="Ok">Submit</button>
 </form>
 </body>
 </html>

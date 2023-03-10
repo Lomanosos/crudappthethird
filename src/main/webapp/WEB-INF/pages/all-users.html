@@ -15,14 +15,18 @@
             <th>Age</th>
             <th>Operations</th>
         </tr>
-        <c:forEach items="${listUser}" var="userч">
+        <c:forEach items="${listUser}" var="user">
             <tr th:each="user : ${listUser}">
 
                 <td th:text="${user.name}"></td>
                 <td th:text="${user.lastName}"></td>
                 <td th:text="${user.age}"></td>
                 <td>
-                    <a href="/editUser?id=${user.id}">Edit</a>
+                    <input type="button" value="Edit" th:data-url="@{/editUser/{id}/(id=${user.id})}"
+                           onclick="window.location.href=this.getAttribute('data-url');"/>
+
+                    <input type="button" value="Delete" th:data-url="@{/{id}/(id=${user.id})}"
+                           onclick="window.location.href=this.getAttribute('data-url');"/>
                 </td>
             </tr>
         </c:forEach>

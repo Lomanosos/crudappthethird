@@ -36,21 +36,27 @@ public class UserController {
         userService.addUser(theuser);
         return "redirect:/";
     }
+    @GetMapping("/editUser/{id}")//редактирование
+    public String updateUser(@PathVariable("id") long id, Model model) {
+        model.addAttribute("user", userService.getUserById(id));
+        return "updateUser";
+    }
+    @PostMapping("/updateUser")
+    public String update(@ModelAttribute("update") User user) {
+        userService.changeUser(user);
+        return "redirect:/";
+    }
 
 
 
 
-    @GetMapping("/deleteUser") //удаление
-    public String deleteById(@RequestParam("userId") long id) {
+    @GetMapping("/{id}") //удаление
+    public String deleteById(@PathVariable("id") long id) {
         User user = userService.getUserById(id);
         userService.removeUser(user);
         return "redirect:/";
     }
 
-    @GetMapping("/editUser")//редактирование
-    public String updateUser(@RequestParam("id") long id, Model model) {
-        model.addAttribute("user", userService.getUserById(id));
-        return "updateUser";
-    }
+
 
 }

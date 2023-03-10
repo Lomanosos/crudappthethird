@@ -9,5 +9,5 @@ public interface UserDao {
     void addUser(User user); //create
     void removeUser(User user);//delete
     User getUserById(long id);//read
-    void changeUserName(String newName);//update
+    void changeUser(User user);//update
 }
